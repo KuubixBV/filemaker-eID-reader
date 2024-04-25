@@ -28,6 +28,10 @@ eID_contact.card_validity_begin = card_validity_begin.strftime('%d/%m/%Y')
 card_validity_end = datetime.datetime.fromtimestamp(eID_contact.card_validity_end)
 eID_contact.card_validity_end = card_validity_end.strftime('%d/%m/%Y')
 
+## Fix birth date timestamp to be in format d/m/y - we will just overwrite the value in the class
+birthdate = datetime.datetime.fromtimestamp(eID_contact.birthdate)
+eID_contact.birthdate = birthdate.strftime('%d/%m/%Y')
+
 # Save eID contact as json
 with open(os.path.join(os.path.expanduser('~'),'Documents/kuubix_eID/', "eID.json"), "w") as eID_file:
     eID_file.write(eID_contact.to_json())
