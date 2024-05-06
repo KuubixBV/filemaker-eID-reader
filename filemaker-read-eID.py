@@ -12,7 +12,7 @@ if not eID.read_card():
     exit()
 
 # Get eID contact object back from card
-eID_contact = eID.get_last_read_eID_contact()
+eID_contact = eID.get_last_read()
 
 # Manipulate data for filemaker where needed
 
